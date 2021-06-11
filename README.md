@@ -1,2 +1,2 @@
-# st
+# 6st
 speed typing 
