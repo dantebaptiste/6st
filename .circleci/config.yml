@@ -6,7 +6,7 @@ jobs:
       - image: "circleci/python:3.6.4"
     steps:
       - checkout
-      - run: python speed typing.py
+      - run: python\ speed typing.py
 
 workflows:
   version: 2
