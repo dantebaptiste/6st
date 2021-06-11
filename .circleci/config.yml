@@ -1,0 +1,16 @@
+version: 2.1
+jobs: 
+  Lets-Try-This-Again: 
+    docker:       
+      - image: "circleci/python:3.6.4"      
+    steps:       
+      - checkout
+      - run: python speed-typing.py
+
+workflows:
+ version: 2
+ Example_Workflow:
+   jobs:
+
+     - Lets-Try-This-Again
+     
