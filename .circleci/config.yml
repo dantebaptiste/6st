@@ -9,6 +9,7 @@ jobs:
           command: |  
             sudo pip install pipenv
             pipenv install
+            python speed-typing.py
 
 
 
