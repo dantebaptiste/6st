@@ -37,7 +37,7 @@ workflows:
 
 
      - Hold-For-Approval:
-         #type: approval
+         type: approval
          requires:
            - Run-Sixth
 
