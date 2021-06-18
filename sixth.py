@@ -1,6 +1,5 @@
 
 
-
 def madlib1():
     animals= raw_input('enter a animal name : ')
     profession = raw_input('enter a profession name: ')
@@ -52,13 +51,21 @@ def madlib3():
     things = raw_input('enter a thing name : ')
 
     print('Today we picked apple from ' + person + "'s Orchard. I had\n"
-        " no idea there were so many different varieties of apples. I\n"
-        " ate " + color + ' apples straight off the tree that tested \n'
+        "no idea there were so many different varieties of apples. \nI"
+        " ate " + color + ' apples straight off the tree that tasted \n'
         'like ' + foods + '. Then there was a ' + adjective + ' apple \n'
         'that looked like a ' + thing + '.When our bag were full, we \n'
         'went on a free hay ride to ' + place + ' and back. It ended at\n'
-        ' a hay pile where we got to ' + verb + ' ' + adverb + '. I can\n '
+        'a hay pile where we got to ' + verb + ' ' + adverb + '. I can\n'
         'hardly wait to get home and cook with the apples. We are going \n'
         'to make appple ' + food + ' and ' + things + ' pies!.')
 
-madlib3()
+
+dic_nouns = open("nouns.txt")
+search_word = "people"
+
+for line in dic_nouns:
+    if(search_word == line.rstrip()):
+        print("word is a noun")
+    else:
+        pass
