@@ -1,0 +1,46 @@
+version: 2.1
+jobs:
+
+  Run-Sixth:
+    docker:
+      - image: "circleci/python:3.6.4"
+    steps:
+      - checkout
+      - run: python sixth.py
+
+  Test-Sixth:
+    docker:
+      - image: "circleci/python:3.6.4"
+    steps:
+      - checkout
+      - run: python test_sixth_dictionaries.py
+
+  Now-Complete:
+    docker:
+      - image: alpine:3.7
+    steps:
+      - run:
+          name: Approval Complete
+          command: |
+            echo 'Do work once the approval has completed'
+
+workflows:
+ version: 2
+ Example_Workflow:
+   jobs:
+
+     - Run-Sixth
+
+     - Test-Sixth:
+        requires:
+          - Run-Sixth
+
+
+     - Hold-For-Approval:
+         #type: approval
+         requires:
+           - Run-Sixth
+
+     - Now-Complete:
+         requires:
+           - Hold-For-Approval
